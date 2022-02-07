@@ -2,6 +2,8 @@ package com.example.flixter.adapters;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     Context context;
     List<Movie> lstMovies;
+    public static final String DEFAULT_IMAGE = "https://www.gstatic.com/webp/gallery3/1.png";
 
     public MovieAdapter(Context context, List<Movie> movies) {
         this.context = context;
@@ -77,7 +80,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             {
                 strImageURL = objMovie.getStrPosterPath();
             }
-            Glide.with(context).load(strImageURL).into(ivPoster);
+            Glide.with(context).load(strImageURL).placeholder(R.drawable.test1).into(ivPoster);
 
         }
     }
